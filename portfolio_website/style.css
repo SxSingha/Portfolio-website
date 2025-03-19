@@ -1,0 +1,53 @@
+.header-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/image/Sumit%20background.jpeg") no-repeat center center;
+  background-size: cover;
+  opacity: 0.15; /* Low opacity so it doesn't overwhelm the text */
+  z-index: -1;
+}
+  
+  /* Full-cover clickable overlay */
+  .click-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(240, 240, 240, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  /* Show the overlay on hover, enabling clicks */
+  .project:hover .click-link-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* "Click Here" button styling */
+  .click-link-overlay span {
+    background: #fff;
+    padding: 15px 30px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #000;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .click-link-overlay span:hover {
+    background: #000;
+    color: #fff;
+  }
+  
